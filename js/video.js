@@ -19,6 +19,7 @@ playButton.addEventListener('click', function(){
 	console.log('getting play button')
 
 	video.play()
+	document.getElementById('volume').innerHTML = video.volume + '%'
 
 })
 
@@ -88,7 +89,7 @@ muteButton.addEventListener('click', function(){
 	if (video.volume == 0){
 		muteButton.innerHTML = 'Mute'
 		video.volume = (volumeSlider.value / 100.00)
-		document.getElementById('volume').innerHTML = volumeSlider.value + '%'
+		document.getElementById('volume').innerHTML = video.volume + '%'
 	} else {
 		muteButton.innerHTML = 'Unmute'
 		video.volume = 0
