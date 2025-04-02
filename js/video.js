@@ -76,6 +76,7 @@ skipButton.addEventListener('click', function(){
 	} else {
 		video.currentTime = video.seekable.start(0)
 	}
+	console.log(video.currentTime)
 
 })
 
@@ -89,7 +90,7 @@ muteButton.addEventListener('click', function(){
 	if (video.volume == 0){
 		muteButton.innerHTML = 'Mute'
 		video.volume = (volumeSlider.value / 100.00)
-		document.getElementById('volume').innerHTML = video.volume + '%'
+		document.getElementById('volume').innerHTML = (video.volume * 100) + '%'
 	} else {
 		muteButton.innerHTML = 'Unmute'
 		video.volume = 0
