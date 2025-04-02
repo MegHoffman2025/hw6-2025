@@ -19,7 +19,7 @@ playButton.addEventListener('click', function(){
 	console.log('getting play button')
 
 	video.play()
-	document.getElementById('volume').innerHTML = video.volume + '%'
+	document.getElementById('volume').innerHTML = (video.volume * 100) + '%'
 
 })
 
