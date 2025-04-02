@@ -86,6 +86,7 @@ muteButton.addEventListener('click', function(){
 	console.log('getting mute button')
 
 	if (video.volume == 0){
+		muteButton.innerHTML = 'Mute'
 		video.volume = (volumeSlider.value / 100.00)
 		document.getElementById('volume').innerHTML = volumeSlider.value + '%'
 	} else {
