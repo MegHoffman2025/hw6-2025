@@ -80,26 +80,29 @@ skipButton.addEventListener('click', function(){
 
 // Mute/unmute the video and update the text in the button.
 muteButton = document.getElementById('mute')
+volumeSlider = document.getElementById('slider')
 muteButton.addEventListener('click', function(){
 
 	console.log('getting mute button')
 
 	if (video.volume == 0){
-		video.volume = (document.getElementById('slider').value / 100)
+		video.volume = (volumeSlider.value / 100.00)
+		document.getElementById('volume').innerHTML = volumeSlider.value + '%'
 	} else {
+		muteButton.innerHTML = 'Unmute'
 		video.volume = 0
+		document.getElementById('volume').innerHTML = '0%'
 	}
 
 })
 
 
 // Change the volume based on the slider and update the volume information.
-volumeSlider = document.getElementById('slider')
 volumeSlider.addEventListener('change', function(){
 
 	console.log('getting slider move')
 
-	video.volume = (volumeSlider.value / 100)
+	video.volume = ((volumeSlider.value) / 100.00)
 	console.log(video.volume)
 	document.getElementById('volume').innerHTML = volumeSlider.value + '%'
 
