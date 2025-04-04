@@ -89,12 +89,12 @@ muteButton.addEventListener('click', function(){
 
 	if (muteButton.innerHTML == 'Unmute'){
 		muteButton.innerHTML = 'Mute'
-		video.volume = (volumeSlider.value / 100.00)
-		document.getElementById('volume').innerHTML = (video.volume * 100) + '%'
+		video.muted = false
+		console.log(video.volume)
 	} else {
 		muteButton.innerHTML = 'Unmute'
-		video.volume = 0
-		document.getElementById('volume').innerHTML = '0%'
+		video.muted = true
+		console.log(video.volume)
 	}
 
 })
